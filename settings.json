@@ -1,0 +1,12 @@
+{
+    "version": 1.0,
+    "license": "MIT",
+    "host": "localhost",
+    "port": 8080,
+    "name": "Xurde",
+    "db_name": "database.db",
+    "secret_key": "eefefe",
+    "admin_user": "xurdeking",
+    "admin_password": "1234",
+    "copyright_year": "2021"
+}
