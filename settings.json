@@ -6,8 +6,10 @@
     "name": "Xurde",
     "db_name": "database.db",
     "secret_key": "eefefe",
-    "admin_user": "xurdeking",
+    "admin_user": "user",
     "admin_password": "1234",
     "copyright_year": "2021",
-    "no_of_posts_home": 3
+    "no_of_posts_home": 3,
+    "admin_email": "youremail@gmail.com",
+    "admin_email_password": "yourpassword"
 }

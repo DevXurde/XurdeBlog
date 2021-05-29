@@ -48,10 +48,10 @@ def contact():
 
             server = smtplib.SMTP("smtp.gmail.com", 587)
             server.starttls()
-            server.login("thexurde123@gmail.com", "Earthisround123")
+            server.login(settings["admin_email"], settings["admin_password"])
             server.sendmail(
-                from_addr="thexurde123@gmail.com",
-                to_addrs="zayedmalick13@gmail.com",
+                from_addr=settings["admin_email"],
+                to_addrs="toemail@gmail.com",
                 msg=body
             )
             return redirect("/")
