@@ -1,19 +1,18 @@
 from flask import Blueprint, render_template, session, request, redirect
 from . import open_settings, db
 from .models import Post
-from .login import LoginManager
 
 dashboard = Blueprint("dashboard", __name__)
 
 settings = open_settings()
-login_manager = LoginManager()
 
 
 @dashboard.route("/dashboard")
 def dashboard_func():
-    if login_manager.get_info() == login_manager.logged_in:
+    # if login_manager.get_info() == login_manager.logged_in:
+    if "admin" in session and session["admin"] == settings["admin_user"]:
         posts = Post.query.order_by(Post.id)
-        return render_template("dashboard.html", settings=settings, posts=posts, login_manager=login_manager)
+        return render_template("dashboard.html", settings=settings, posts=posts)
 
     else:
         return redirect("/login")
@@ -21,7 +20,9 @@ def dashboard_func():
 
 @dashboard.route("/add_post", methods=["GET", "POST"])
 def add_post():
-    if login_manager.get_info() == login_manager.logged_in:
+    # if login_manager.get_info() == login_manager.logged_in:
+    if "admin" in session and session["admin"] == settings["admin_user"]:
+
         if request.method == "POST":
             title = request.form.get("title")
             tagline = request.form.get("tagline")
@@ -36,7 +37,7 @@ def add_post():
 
             return redirect("/dashboard")
 
-        return render_template("add_post.html", settings=settings, login_manager=login_manager)
+        return render_template("add_post.html", settings=settings)
 
     else:
         return redirect("/dashboard")
@@ -44,7 +45,9 @@ def add_post():
 
 @dashboard.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit(id):
-    if login_manager.get_info() == login_manager.logged_in:
+    # if login_manager.get_info() == login_manager.logged_in:
+    if "admin" in session and session["admin"] == settings["admin_user"]:
+
         if request.method == "POST":
             title = request.form.get("title")
             tagline = request.form.get("tagline")
@@ -63,7 +66,7 @@ def edit(id):
             return redirect("/dashboard")
 
         post = Post.query.filter_by(id=id).first()
-        return render_template("edit.html", settings=settings, post=post, login_manager=login_manager)
+        return render_template("edit.html", settings=settings, post=post)
 
     else:
         return redirect("/dashboard")
@@ -71,7 +74,9 @@ def edit(id):
 
 @dashboard.route("/delete/<int:id>")
 def delete(id):
-    if login_manager.get_info() == login_manager.logged_in:
+    # if login_manager.get_info() == login_manager.logged_in:
+    if "admin" in session and session["admin"] == settings["admin_user"]:
+
         post = Post.query.filter_by(id=id).first()
         db.session.delete(post)
         db.session.commit()

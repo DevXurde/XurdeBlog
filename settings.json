@@ -8,5 +8,6 @@
     "secret_key": "eefefe",
     "admin_user": "xurdeking",
     "admin_password": "1234",
-    "copyright_year": "2021"
+    "copyright_year": "2021",
+    "no_of_posts_home": 3
 }

@@ -12,3 +12,11 @@ class Post(db.Model):
     html = db.Column(db.Text)
 
     date_created = db.Column(db.DateTime, default=datetime.utcnow())
+
+
+class Contact(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
+    name = db.Column(db.String(1000))
+    email = db.Column(db.String(1000))
+    message = db.Column(db.String(10000))
