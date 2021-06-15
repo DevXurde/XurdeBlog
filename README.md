@@ -10,3 +10,5 @@ It was created in 3 hours and was a fun to make project , You can easily clone i
 
 # Why to use?
 You should use this because everything i coded was very readable . All you need to do is simply go through the code so that you can understand it and implement the same code on any other template .
+
+# Thank You
