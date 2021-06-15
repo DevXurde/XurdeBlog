@@ -9,7 +9,6 @@ settings = open_settings()
 
 @dashboard.route("/dashboard")
 def dashboard_func():
-    # if login_manager.get_info() == login_manager.logged_in:
     if "admin" in session and session["admin"] == settings["admin_user"]:
         posts = Post.query.order_by(Post.id)
         return render_template("dashboard.html", settings=settings, posts=posts)
@@ -20,7 +19,6 @@ def dashboard_func():
 
 @dashboard.route("/add_post", methods=["GET", "POST"])
 def add_post():
-    # if login_manager.get_info() == login_manager.logged_in:
     if "admin" in session and session["admin"] == settings["admin_user"]:
 
         if request.method == "POST":
@@ -45,7 +43,6 @@ def add_post():
 
 @dashboard.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit(id):
-    # if login_manager.get_info() == login_manager.logged_in:
     if "admin" in session and session["admin"] == settings["admin_user"]:
 
         if request.method == "POST":
@@ -74,7 +71,6 @@ def edit(id):
 
 @dashboard.route("/delete/<int:id>")
 def delete(id):
-    # if login_manager.get_info() == login_manager.logged_in:
     if "admin" in session and session["admin"] == settings["admin_user"]:
 
         post = Post.query.filter_by(id=id).first()
