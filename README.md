@@ -1,4 +1,4 @@
-# Flask-Blog
+# XurdeBlog
 This is a blog created with flask and the clean blog template from bootstrap . This is a really interesting project , I created this after the day i learned Flask.
 It was created in 3 hours and was a fun to make project , You can easily clone into this repository and modify it as per your requirement .
 
@@ -11,11 +11,11 @@ It was created in 3 hours and was a fun to make project , You can easily clone i
 ## How to use?
 First you need to clone the repository
 ```bash
-git clone https://github.com/DevXurde/flask-blog.git
+git clone https://github.com/DevXurde/XurdeBlog.git
 ```
 Change directory
 ```bash
-cd flask-blog
+cd XurdeBlog
 ```
 Install requirement
 ```bash
