@@ -3,7 +3,7 @@
     "license": "MIT",
     "host": "localhost",
     "port": 8080,
-    "name": "Xurde",
+    "name": "XurdeBlog",
     "db_name": "database.db",
     "secret_key": "eefefe",
     "admin_user": "user",

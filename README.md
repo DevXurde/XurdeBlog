@@ -11,7 +11,7 @@ It was created in 3 hours and was a fun to make project , You can easily clone i
 ## How to use?
 First you need to clone the repository
 ```bash
-git clone https://github.com/DevXurde/XurdeBlog.git
+git clone https://github.com/ZayedMalick/XurdeBlog.git
 ```
 Change directory
 ```bash
